@@ -18,9 +18,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         bounds = view.bounds
-
         clockwiseSpiral()
         counterclockwiseSpiral()
     }
@@ -49,9 +47,7 @@ class ViewController: UIViewController {
 
         // 2 - 9 arcs
         for _ in 2..<10 {
-
             startAngle = endAngle
-
             switch startAngle {
             case 0, 2*π:
                 center = CGPoint(x: center.x - radius/2, y: center.y)
@@ -149,15 +145,11 @@ class ViewController: UIViewController {
     }
 
     func drawLayerAnimation(layer: CAShapeLayer!){
-
         let layerShape = layer
-
         // The starting point
         layerShape?.strokeStart = 0.0
-
         // Don't draw the spiral initially
         layerShape?.strokeEnd = 0.0
-
         // Animate from 0 (no spiral stroke) to 1 (full spiral path)
         let drawAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         drawAnimation.fromValue = 0.0
@@ -187,3 +179,4 @@ extension CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
 }
+
